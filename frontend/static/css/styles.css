@@ -1,3 +1,27 @@
 #nprogress .bar {
     height: 6px !important;
 }
+
+
+/* Muted text labels in manage categories and tags page */
+.catsTags {
+    font-size: 1.2rem;    
+}
+
+.navbar {
+    background-color: black !important;   
+    color: whitesmoke !important;
+}
+
+.navItems {
+    color: whitesmoke !important;
+    cursor: pointer !important;
+}
+
+span.navbar-toggler-icon {
+    /* color: whitesmoke !important; */
+    background-color: whitesmoke !important;
+    padding: 1rem;
+    border-radius: 5px;
+}
+

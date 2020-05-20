@@ -31,25 +31,25 @@ const Header = (props) => {
 
     return (
         <div>
-            <Navbar color="light" light expand="md">
+            <Navbar color="light" light expand="md" className="navbar">
                 <Link href="/">
                     <NavLink className="font-weight-bold">{APP_NAME}</NavLink>
                 </Link>
 
                 <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
+                <Collapse isOpen={isOpen} navbar className="navtoggler">
                     <Nav className="ml-auto" navbar>
                         {!isAuth() && <React.Fragment>
                             <NavItem>
                                 <Link href="/signin">
-                                    <NavLink>
+                                    <NavLink className="navItems">
                                         Signin
                                 </NavLink>
                                 </Link>
                             </NavItem>
                             <NavItem>
                                 <Link href="/signup">
-                                    <NavLink>
+                                    <NavLink className="navItems">
                                         Signup
                                 </NavLink>
                                 </Link>
@@ -63,7 +63,8 @@ const Header = (props) => {
                         {isAuth() && isAuth().role === 0 && (
                             <NavItem>
                                 <Link href="/user">
-                                    <NavLink style={{ cursor: 'pointer' }}> {`${isAuth().name}'s Dashboard`}</NavLink>
+                                    <NavLink className="navItems"> {`${isAuth().name}'s Dashboard`}
+                                    </NavLink>
                                 </Link>
                             </NavItem>
                         )}
@@ -72,7 +73,8 @@ const Header = (props) => {
                         {isAuth() && isAuth().role === 1 && (
                             <NavItem>
                                 <Link href="/admin">
-                                    <NavLink style={{ cursor: 'pointer' }}> {`${isAuth().name}'s Dashboard`}</NavLink>
+                                    <NavLink className="navItems"> {`${isAuth().name}'s Dashboard`}
+                                    </NavLink>
                                 </Link>
                             </NavItem>
                         )}
@@ -80,11 +82,10 @@ const Header = (props) => {
                         {isAuth() && (
 
                             <NavItem>
-                                <NavLink
-                                    style={{ cursor: 'pointer' }}
+                                <NavLink className="navItems"
                                     onClick={() => signout(() => Router.replace('/signin'))} >
                                     Signout
-                           </NavLink>
+                             </NavLink>
                             </NavItem>)}
 
 
