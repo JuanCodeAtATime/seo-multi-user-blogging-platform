@@ -1,4 +1,4 @@
-const Category = require('../models/category');
+const Tags = require('../models/tag');
 const slugify = require('slugify');
 const { errorHandler } = require('../helpers/dbErrorHandler');
 
@@ -7,9 +7,9 @@ exports.create = (req, res) => {
     const { name } = req.body
     let slug = slugify(name).toLowerCase();
 
-    let category = new Category({ name, slug });
+    let tag = new Tags({ name, slug });
 
-    category.save((err, data) => {
+    tag.save((err, data) => {
         if (err) {
             return res.status(400).json({
                 error: errorHandler(err)
@@ -21,7 +21,7 @@ exports.create = (req, res) => {
 
 
 exports.list = (req, res) => {
-    Category.find({}).exec((err, data) => {
+    Tags.find({}).exec((err, data) => {
         if (err) {
             return res.status(400).json({
                 error: errorHandler(err)
@@ -36,13 +36,13 @@ exports.list = (req, res) => {
 exports.read = (req, res) => {
     const slug = req.params.slug.toLowerCase();
 
-    Category.findOne({ slug }).exec((err, category) => {
+    Tags.findOne({ slug }).exec((err, tag) => {
         if (err) {
             return res.status(400).json({
-                error: errorHandler(err)
+                error: "Sorry.  We couldn't find that tag title."
             });
         }
-        res.json(category);
+        res.json(tag);
     });
 
 };
@@ -50,14 +50,14 @@ exports.read = (req, res) => {
 exports.remove = (req, res) => {
     const slug = req.params.slug.toLowerCase();
 
-    Category.findOneAndRemove({ slug }).exec((err, data) => {
+    Tags.findOneAndRemove({ slug }).exec((err, data) => {
         if (err) {
             return res.status(400).json({
                 error: errorHandler(err)
             });
         }
         res.json({
-            message: 'Category deleted successfully'
+            message: 'Tag deleted successfully'
         });
     });
 
