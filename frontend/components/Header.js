@@ -6,9 +6,9 @@ import Router from "next/router";
 import NProgress from "nprogress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCode,
   faDoorOpen,
   faLaptopCode,
+  faCodeBranch,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   Collapse,
@@ -41,8 +41,8 @@ const Header = (props) => {
         <Link href="/">
           <NavLink className="font-weight-bold">
             <h2 id="logo">
-              <FontAwesomeIcon icon={faCode} /> juan
-              <span style={{ color: "cyan" }}>Bytes</span>
+              <FontAwesomeIcon icon={faCodeBranch} /> coder
+              <span style={{ color: "cyan" }}>Connect</span>
             </h2>
           </NavLink>
         </Link>
@@ -50,6 +50,14 @@ const Header = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar className="navtoggler">
           <Nav className="ml-auto" navbar>
+            <React.Fragment>
+              <NavItem>
+                <Link href="/blogs">
+                  <NavLink className="navItems authBtns">Blogs</NavLink>
+                </Link>
+              </NavItem>
+            </React.Fragment>
+
             {!isAuth() && (
               <React.Fragment>
                 <NavItem>

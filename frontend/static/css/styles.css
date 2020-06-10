@@ -1,6 +1,14 @@
-#logo,
+#logo {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  cursor: pointer;
+}
+
 .headers {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 #nprogress .bar {
