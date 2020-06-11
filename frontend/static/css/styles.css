@@ -1,11 +1,71 @@
 #logo {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   cursor: pointer;
+  font-size: 1.5rem;
 }
 
 .headers {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
+
+/* Landing page background image */
+.landingTop {
+  height: 650px;
+  width: 100%;
+  background-image: url("../images/landing-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.listItems:hover,
+.nav-link:hover {
+  text-decoration: none !important;
+  background-color: none !important;
+  text-decoration-color: none !important;
+}
+
+.landingSectionTwo {
+  height: 800px;
+  width: 100%;
+  margin: 0;
+  background-color: burlywood;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Centered button on landing page */
+.learnMore {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: whitesmoke !important;
+  font-size: 2rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 200 !important;
+  transition: all 0.2s ease-in-out;
+}
+.learnMore:hover {
+  transform: scale(1.1);
+}
+
+/* Centered button on landing page other color  */
+.more {
+  color: #5bc0de !important;
+}
+
+.dropdown-toggle {
+  margin-top: 2px !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* div.navtoggler {
+  z-index: 1000 !important;
+} */
 
 a:hover {
   text-decoration: none;
@@ -35,7 +95,7 @@ Media queries needed to prevent buttons from elongating in collapsible menu */
 } */
 
 /* .authBtns {
-  background-color: #00bfff !important;
+  background-color: #5bc0de !important;
   outline: none !important;
   text-decoration: none !important;
 } */
@@ -43,6 +103,20 @@ Media queries needed to prevent buttons from elongating in collapsible menu */
 .navItems {
   color: whitesmoke !important;
   cursor: pointer !important;
+}
+
+/* Menu items in collapsible menu */
+.listItems {
+  color: black !important;
+}
+
+.landingAuth {
+  color: whitesmoke !important;
+}
+
+.dropdown-menu {
+  background-color: #5bc0de !important;
+  color: whitesmoke !important;
 }
 
 span.navbar-toggler-icon {

@@ -8,8 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDoorOpen,
   faList,
-  faUser,
-  faSignInAlt,
   faLaptopCode,
   faCodeBranch,
 } from "@fortawesome/free-solid-svg-icons";
@@ -21,11 +19,11 @@ import {
   Nav,
   NavItem,
   NavLink,
-  // UncontrolledDropdown,
-  // DropdownToggle,
-  // DropdownMenu,
-  // DropdownItem,
-  // NavbarText
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
 } from "reactstrap";
 
 import ".././node_modules/nprogress/nprogress.css";
@@ -45,7 +43,7 @@ const Header = (props) => {
           <NavLink className="font-weight-bold">
             <h2 id="logo">
               <FontAwesomeIcon icon={faCodeBranch} /> coder
-              <span style={{ color: "#00BFFF" }}>Connect</span>
+              <span style={{ color: "#5bc0de" }}>Connect</span>
             </h2>
           </NavLink>
         </Link>
@@ -53,33 +51,65 @@ const Header = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar className="navtoggler">
           <Nav className="ml-auto" navbar>
-            <React.Fragment>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                <FontAwesomeIcon
+                  icon={faList}
+                  style={{
+                    color: "white",
+                    fontSize: "1.9rem",
+                  }}
+                />
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  <Link href="/blogs">
+                    <NavLink className="listItems">Blogs</NavLink>
+                  </Link>
+                </DropdownItem>
+                <DropdownItem>
+                  <Link href="#">
+                    <NavLink className="listItems">Q & A</NavLink>
+                  </Link>
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>Reset</DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+            {/* <React.Fragment>
               <NavItem>
-                <Link href="/blogs">
-                  <NavLink className="navItems">
-                    <FontAwesomeIcon icon={faList} /> Blogs
-                  </NavLink>
-                </Link>
+               
               </NavItem>
-            </React.Fragment>
+            </React.Fragment> */}
 
             {!isAuth() && (
               <React.Fragment>
                 <NavItem>
                   <Link href="/signin">
                     <NavLink className="navItems">
-                      <FontAwesomeIcon icon={faSignInAlt} /> Sign-in
+                      <button
+                        className="btn landingAuth"
+                        style={{ backgroundColor: "#5bc0de" }}
+                      >
+                        {" "}
+                        sign-in
+                      </button>
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link href="/signup">
                     <NavLink className="navItems">
-                      <FontAwesomeIcon
-                        icon={faUser}
-                        style={{ color: "#00BFFF" }}
-                      />{" "}
-                      <span style={{ color: "#00BFFF" }}>Sign-up</span>
+                      <button
+                        className="btn landingAuth"
+                        style={{
+                          backgroundColor: "transparent",
+                          border: "solid #5bc0de 1.6px",
+                        }}
+                      >
+                        {" "}
+                        sign-up
+                      </button>
                     </NavLink>
                   </Link>
                 </NavItem>
@@ -118,24 +148,6 @@ const Header = (props) => {
                 </NavLink>
               </NavItem>
             )}
-
-            {/* <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                Options
-              </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem>
-                                    Option 1
-                </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
-                </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>
-                                    Reset
-                </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown> */}
           </Nav>
           {/* <NavbarText>Simple Text</NavbarText> */}
         </Collapse>
