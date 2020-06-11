@@ -7,6 +7,9 @@ import NProgress from "nprogress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDoorOpen,
+  faList,
+  faUser,
+  faSignInAlt,
   faLaptopCode,
   faCodeBranch,
 } from "@fortawesome/free-solid-svg-icons";
@@ -42,7 +45,7 @@ const Header = (props) => {
           <NavLink className="font-weight-bold">
             <h2 id="logo">
               <FontAwesomeIcon icon={faCodeBranch} /> coder
-              <span style={{ color: "cyan" }}>Connect</span>
+              <span style={{ color: "#00BFFF" }}>Connect</span>
             </h2>
           </NavLink>
         </Link>
@@ -53,7 +56,9 @@ const Header = (props) => {
             <React.Fragment>
               <NavItem>
                 <Link href="/blogs">
-                  <NavLink className="navItems authBtns">Blogs</NavLink>
+                  <NavLink className="navItems">
+                    <FontAwesomeIcon icon={faList} /> Blogs
+                  </NavLink>
                 </Link>
               </NavItem>
             </React.Fragment>
@@ -62,12 +67,20 @@ const Header = (props) => {
               <React.Fragment>
                 <NavItem>
                   <Link href="/signin">
-                    <NavLink className="navItems authBtns">Signin</NavLink>
+                    <NavLink className="navItems">
+                      <FontAwesomeIcon icon={faSignInAlt} /> Sign-in
+                    </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link href="/signup">
-                    <NavLink className="navItems authBtns">Signup</NavLink>
+                    <NavLink className="navItems">
+                      <FontAwesomeIcon
+                        icon={faUser}
+                        style={{ color: "#00BFFF" }}
+                      />{" "}
+                      <span style={{ color: "#00BFFF" }}>Sign-up</span>
+                    </NavLink>
                   </Link>
                 </NavItem>
               </React.Fragment>

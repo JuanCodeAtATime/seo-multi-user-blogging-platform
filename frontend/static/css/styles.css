@@ -26,13 +26,19 @@ a:hover {
 }
 /* 
 Media queries needed to prevent buttons from elongating in collapsible menu */
-.authBtns {
+/* .authBtns {
   background-color: #383838;
   border-radius: 5px;
   margin: 2px;
   display: inline-block;
   padding: auto 1px;
-}
+} */
+
+/* .authBtns {
+  background-color: #00bfff !important;
+  outline: none !important;
+  text-decoration: none !important;
+} */
 
 .navItems {
   color: whitesmoke !important;
