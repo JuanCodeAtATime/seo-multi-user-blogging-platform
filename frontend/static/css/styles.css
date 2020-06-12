@@ -29,9 +29,12 @@
   height: 800px;
   width: 100%;
   margin: 0;
-  background-color: burlywood;
+  background-color: rgba(91, 192, 222, 0.75) !important;
 }
 
+.program-your-career {
+  justify-content: center !important;
+}
 .centered {
   position: absolute;
   top: 50%;
@@ -43,13 +46,26 @@
 .learnMore {
   background-color: rgba(0, 0, 0, 0.65);
   color: whitesmoke !important;
-  font-size: 2rem;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-weight: 200 !important;
+  font-size: 1.5rem;
+  font-weight: 500 !important;
   transition: all 0.2s ease-in-out;
+  margin-bottom: 1rem;
 }
+
 .learnMore:hover {
   transform: scale(1.1);
+}
+
+.contributeBtn {
+  background-color: rgba(91, 192, 222, 0.75) !important;
+  color: whitesmoke !important;
+  font-size: 1.5rem;
+  font-weight: 500 !important;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 1rem;
+}
+.contributeBtn:hover {
+  transform: scale(1.08);
 }
 
 /* Centered button on landing page other color  */

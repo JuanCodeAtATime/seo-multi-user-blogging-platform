@@ -89,7 +89,10 @@ const Header = (props) => {
                     <NavLink className="navItems">
                       <button
                         className="btn landingAuth"
-                        style={{ backgroundColor: "#5bc0de" }}
+                        style={{
+                          backgroundColor: "transparent",
+                          border: "solid #5bc0de 1.6px",
+                        }}
                       >
                         {" "}
                         sign-in
