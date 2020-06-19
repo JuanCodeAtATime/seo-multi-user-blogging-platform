@@ -36,7 +36,7 @@ const Card = ({ blog }) => {
             <header>
               <Link href={`/blogs/${blog.slug}`}>
                 <a>
-                  <h2 className="font-weight-bold text-info">{blog.title}</h2>
+                  <h2 className="font-weight-bold text-dark">{blog.title}</h2>
                 </a>
               </Link>
               <section>
