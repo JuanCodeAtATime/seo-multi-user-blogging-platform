@@ -7,7 +7,7 @@ import { listBlogsWithCategoriesAndTags } from "../../actions/blog";
 import Card from "../../components/blog/Card";
 import { API, DOMAIN, APP_NAME, FB_APP_ID } from "../../config";
 
-const Blogs = ({ blogs, categories, tags, size }) => {
+const Blogs = ({ blogs, categories, tags, size, router }) => {
   const head = () => (
     <Head>
       <title> Programming Blogs | {APP_NAME} </title>
@@ -31,10 +31,13 @@ const Blogs = ({ blogs, categories, tags, size }) => {
       <meta property="og:url" content={`${DOMAIN}${router.pathname}`} />
       <meta property="og:site_name" content={`${APP_NAME}`} />
 
-      <meta property="og:image" content="/static/images/landing-image.jpg" />
+      <meta
+        property="og:image"
+        content={`${DOMAIN}/static/images/landing-image.jpg`}
+      />
       <meta
         property="og:image:secure_url"
-        content="/static/images/landing-image.jpg"
+        content={`${DOMAIN}/static/images/landing-image.jpg`}
       />
       <meta property="og:image:type" content="image/jpg" />
       <meta property="fb:app_id" content={`${FB_APP_ID}`} />
@@ -70,6 +73,7 @@ const Blogs = ({ blogs, categories, tags, size }) => {
 
   return (
     <React.Fragment>
+      {head()}
       <Layout>
         <main>
           <div className="container-fluid">
